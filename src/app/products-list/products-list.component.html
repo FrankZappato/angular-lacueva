@@ -10,24 +10,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let product of products">
             <td><img [src]="product.image" [alt]="product.name"></td>
             <td>{{product.name}}</td>
             <td>{{product.category}}</td>
             <td>{{product.price}}</td>
-            <td>{{product.stock}}</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+            <td><span class="badge badge-warning" *ngIf="product.stock == 0">Out of Stock!</span></td>
+        </tr>       
     </tbody>
 </table>
