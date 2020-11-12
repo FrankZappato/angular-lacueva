@@ -1,4 +1,5 @@
 
+<h2>Lista de Productos</h2>
 <table class = "table">
     <thead>
         <tr>
@@ -10,11 +11,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of products" [ngClass]="{'clearance': product.clearance}">
             <td><img [src]="product.image" [alt]="product.name"></td>
-            <td>{{product.name}}</td>
+            <td>{{product.name | uppercase}}</td>
             <td>{{product.category}}</td>
-            <td>{{product.price}}</td>
+            <td>{{product.price | currency}}</td>
             <td><span class="badge badge-warning" *ngIf="product.stock == 0">Out of Stock!</span></td>
         </tr>       
     </tbody>
