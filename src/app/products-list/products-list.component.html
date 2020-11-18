@@ -1,3 +1,28 @@
+<div class="container-list">
+    <div *ngFor="let product of products" class="row row_products">    
+        <div class="col-sm-4 col-md-12">
+            <form method="post" action="add_to_cart">
+                <div class="products">
+                    <img [src]="product.image" [alt]="product.name" class="img-responsive product-img" />
+                    <h4 class="text-info name-text">{{product.name | uppercase}}</h4>
+                    <h4>{{product.price | currency}}</h4>
+                    <h5>{{product.category}}</h5>                    
+                    <input type="number" name="quantity" min="0" data-bind="value:replyNumber" />                        
+                    <div class="btn_box">                        
+                        <button type="submit" name="add_to_cart" class="btn btn-info add-to-cart-btn">
+                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                        </button>                       
+                        <button type="button" class="btn btn-primary">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>        
+    </div>
+</div>
+
+
 
 <h2>Lista de Productos</h2>
 <table class = "table">
@@ -8,15 +33,23 @@
             <th>Category</th>
             <th>Price</th>
             <th>Stock</th>
+            <th>Quantity</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let product of products" [ngClass]="{'clearance': product.clearance}">
-            <td><img [src]="product.image" [alt]="product.name"></td>
+            <td><img width="90" class="img- thumbnail"[src]="product.image" [alt]="product.name"></td>
             <td>{{product.name | uppercase}}</td>
             <td>{{product.category}}</td>
             <td>{{product.price | currency}}</td>
             <td><span class="badge badge-warning" *ngIf="product.stock == 0">Out of Stock!</span></td>
+            <td>
+                <button type="button" class="btn btn-danger btn-sm" (click)="downQuantity(product)">-</button>
+                <input type="text" [(ngModel)]="product.quantity"
+                (keyup)="onChangeQuantity($event,product)">
+                {{product.quantity}}
+                <button type="button" class="btn btn-success btn-sm" (click)="upQuantity(product)">+</button>
+            </td>
         </tr>       
     </tbody>
 </table>
