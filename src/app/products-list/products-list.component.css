@@ -41,3 +41,14 @@ h2{
 .row_products {
     margin-top: 20px;
 }
+
+.input-quantity {
+    width: 50%;
+}
+
+.quantity {
+    display: flex;
+}
+.td {
+    vertical-align: middle;
+}
