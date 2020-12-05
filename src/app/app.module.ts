@@ -11,6 +11,7 @@ import { ThecaveAboutComponent } from './thecave-about/thecave-about.component';
 import { ThecaveProductsComponent } from './thecave-products/thecave-products.component';
 import { ThecaveCartComponent } from './thecave-cart/thecave-cart.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import { ThecaveCartComponent } from './thecave-cart/thecave-cart.component';
   imports: [
     BrowserModule,
     AppRoutingModule,           
-    FormsModule
+    FormsModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]
