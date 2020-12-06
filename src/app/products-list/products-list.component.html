@@ -19,12 +19,9 @@
             <td>{{product.price | currency}}</td>
             <td><span class="badge badge-warning" *ngIf="product.stock == 0">Out of Stock!</span></td>
             <td *ngIf="product.stock != 0">
-                <div  class = "quantity">
-                    <button type="button" class="btn btn-danger btn-sm" (click)="downQuantity(product)">-</button>
-                    <input type="text" class="input-quantity" [(ngModel)]="product.quantity"
-                    (keyup)="onChangeQuantity($event,product)">                    
-                    <button type="button" class="btn btn-success btn-sm" (click)="upQuantity(product)">+</button>
-                </div>
+                <app-input-quantity [(quantity)] = "product.quantity" [max]="product.stock"
+                (maxReached)="maxReached($event)"></app-input-quantity>
+                Cant : {{product.quantity}};
             </td>
         </tr>       
     </tbody>

@@ -1,0 +1,6 @@
+<div  class = "quantity">
+    <button type="button" class="btn btn-danger btn-sm" (click)="downQuantity()">-</button>
+    <input type="text" class="input-quantity" [(ngModel)]="quantity"
+    (keyup)="onChangeQuantity($event)">                    
+    <button type="button" class="btn btn-success btn-sm" (click)="upQuantity()">+</button>
+</div>

@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ThecaveAboutComponent } from './thecave-about/thecave-about.component';
 import { ThecaveProductsComponent } from './thecave-products/thecave-products.component';
 import { ThecaveCartComponent } from './thecave-cart/thecave-cart.component';
+import { InputQuantityComponent } from './input-quantity/input-quantity.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ThecaveCartComponent } from './thecave-cart/thecave-cart.component';
     ProductsListComponent,
     ThecaveAboutComponent,
     ThecaveProductsComponent,
-    ThecaveCartComponent
+    ThecaveCartComponent,
+    InputQuantityComponent
   ],
   imports: [
     BrowserModule,

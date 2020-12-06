@@ -49,17 +49,9 @@ export class ProductsListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  downQuantity(product : Product) : void{
-    if(product.quantity > 0)
-    product.quantity --;
-  }
-  upQuantity(product : Product) : void{
-    if(product.quantity < product.stock)
-    product.quantity ++;
-  }
-  onChangeQuantity(event, product : Product) : void{
-    if(!(event.key >= 0) && (event.key <= 9))
-      event.preventDefault();
+  
+  maxReached(m:string){
+    alert(m);
   }
 
 }
