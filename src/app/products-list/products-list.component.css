@@ -49,3 +49,9 @@
 .td {
     vertical-align: middle;
 }
+.purchases {
+    display: flex;
+}
+.btn-add-to-cart {
+    margin-left: 5px;
+}

@@ -19,9 +19,11 @@
             <td>{{product.price | currency}}</td>
             <td><span class="badge badge-warning" *ngIf="product.stock == 0">Out of Stock!</span></td>
             <td *ngIf="product.stock != 0">
-                <app-input-quantity [(quantity)] = "product.quantity" [max]="product.stock"
-                (maxReached)="maxReached($event)"></app-input-quantity>
-                Cant : {{product.quantity}};
+                <div class="purchases">
+                    <app-input-quantity [(quantity)] = "product.quantity" [max]="product.stock"
+                    (maxReached)="maxReached($event)"></app-input-quantity>
+                    <button class="btn btn-info btn-sm btn-add-to-cart" (click)="addToCart(product)">Comprar</button>
+                </div>
             </td>
         </tr>       
     </tbody>
