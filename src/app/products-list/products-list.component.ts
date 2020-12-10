@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductDataService } from '../product-data.service';
 import { ProductsCartService } from '../products-cart.service';
 import { Product } from './product';
 
@@ -48,7 +49,9 @@ export class ProductsListComponent implements OnInit {
 ];
   
 
-  constructor(private cart :ProductsCartService) { 
+  constructor(
+    private cart :ProductsCartService,
+    private productsDataService : ProductDataService) { 
     
   }
 

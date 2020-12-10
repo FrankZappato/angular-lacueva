@@ -10,13 +10,17 @@ import { Product } from '../products-list/product';
 })
 export class ThecaveCartComponent implements OnInit {
   
-  cartList$ : Observable<Product []>;
-
+  cartList$ : Observable<Product []>;  
+  
   constructor(private cart :ProductsCartService) { 
     this.cartList$ = cart.cartList.asObservable();    
+  }
+  deleteFromCart(product){    
+    this.cart.deleteFromCart(product);    
   }
 
   ngOnInit(): void {
   }
-
+  
 }
+

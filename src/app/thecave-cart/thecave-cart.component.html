@@ -15,7 +15,7 @@
             <td>{{product.price | currency}}</td>
             <td>{{product.quantity}}</td>
             <td>{{(product.quantity * product.price) | currency}}</td>
-            <td><button class="btn btn-danger">Remove</button></td>
+            <td><button class="btn btn-danger" (click)="deleteFromCart(product)">Remove</button></td>
         </tr>       
     </tbody>
 </table>

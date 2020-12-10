@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from '../app/app-routing/app-routing.module';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { FormsModule } from '@angular/forms';
@@ -25,7 +26,8 @@ import { InputQuantityComponent } from './input-quantity/input-quantity.componen
   imports: [
     BrowserModule,
     AppRoutingModule,           
-    FormsModule,    
+    FormsModule,
+    HttpClientModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
